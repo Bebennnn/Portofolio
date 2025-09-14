@@ -1,0 +1,174 @@
+body{
+    font-family: sans-serif;
+    margin:0;
+    padding:0;
+    line-height:1.6;
+    background-color: #2f3542;
+}
+
+.container {
+    width:80%;
+    margin:0 auto;
+    max-width: 1200px;
+}
+
+header {
+    background-color: transparent;
+    color: #fff;
+    padding: 1rem 0;
+    position: sticky;
+    top:0;
+
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul {
+    list-style: none;
+    display:flex;
+    margin:0;
+    padding:0;    
+}
+
+header nav ul li {
+    margin-left:20px;
+}
+
+header nav a {
+    color:#fff;
+    text-decoration: none;
+}
+
+#hero {
+    background: #f4f4f4;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.btn {
+    background-color: #008000;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+.btn:hover {
+    background-color: #005500;
+}   
+
+section{
+    padding: 4rem 0;
+}
+
+section h2 {
+    margin-bottom: 2rem;
+    width:100%;
+    text-align: center;
+}
+
+#projects .container {
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+    color: #fff;
+}
+
+#projects .container  p{
+    color: #fff;
+
+}
+
+.project {
+    border: 1px solid #ddd;
+    width:20%;
+    padding:10px;
+    margin-bottom:20px;
+    border-radius:5px;
+    box-sizing:border-box;
+    flex-grow:1;
+    min-width: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+    box-shadow: #444 2px 2px 8px;
+    position: relative;
+    background-color: #2f3542;
+}
+
+@property --angle{
+    syntax:"<angle>";
+    initial-value:0deg;
+    inherits:false;
+}
+.project::after,.project::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    padding: 5px;
+    border-radius: 5px;
+    background-image:conic-gradient(from var(--angle),transparent 60%, #787878);
+    animation: 4s spin  linear infinite;
+}
+
+.project::before{
+    filter: blur(2.0rem);
+    opacity: 0.8;
+}
+
+@keyframes spin{
+    from{
+        --angle:0deg;
+    }
+    to{
+        --angle:360deg;
+    }
+}
+
+
+.project img {
+    width:20%;
+    height:auto;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    display:block;
+}
+
+#about{
+    background-color:#444;
+    
+}
+
+#about img {
+    width: 25%;
+    height: auto;
+    border-radius: 10%;
+    display: block;
+    margin-right: auto;
+    margin-bottom: 20px;
+    justify-content: space-around;
+}
+
+#about .container p {
+    max-width: 600px;
+    margin-left: auto;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    display:flex;
+    justify-content: space-around;
+}
+
+
